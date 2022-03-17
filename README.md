@@ -1,16 +1,23 @@
 <p align="center">
-  <img src="https://github.com/OxfordDemSci/ex_USA/blob/master/out/capture.jpg?raw=true" width="100%"/>
+  <img src="https://github.com/jmaburto/ex_USA_racial-ethnic_differences/blob/master/out/cover.png?raw=true" width="100%"/>
 </p>
 
 
-## Life expectancy in the USA
-### Obesity contributions
+## An integrated approach to quantify the impact of the COVID-19 pandemic on life expectancy, lifespan inequality and life lost by ethnic/racial groups in the USA
 
-### HELLO TESTING 
 
+[![DOI](https://zenodo.org/badge/334238621.svg)](https://zenodo.org/badge/latestdoi/334238621)
+[![Generic badge](https://img.shields.io/badge/R-4.0.4-orange.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/License-GNU-<green>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Maintained-Yes-red.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/BuildPassing-Yes-purple.svg)](https://shields.io/)
 
 ### Introduction
 ------------
+
+This is a repository to accompany 'An integrated approach to quantify the impact of the COVID-19 pandemic on life expectancy, lifespan inequality and life lost by ethnic/racial groups in the USA'. 
+A link to the open-access version of the paper can be found by clicking [here](https://www.medrxiv.org). The replication files for this paper include customised functionality written in the [**R**](https://www.r-project.org/) statistical programming language.
+
 
 ### Prerequisites
 ------------
@@ -23,10 +30,10 @@ As a pre-requisite to running this locally, you will need a working installation
 To run this code, do something like:
 
 ```console
-$ git clone https://github.com/OxfordDemSci/ex_USA.git
+$ git clone https://github.com/jmaburto/ex_USA_racial-ethnic_differences.git
 ```
 
-and then execute each of the scripts (0 through 10) which will undertake sequential tasks like defining skeletons, to undertaking the PCLM, cleaning outputs for analysis, and data visualisation
+and then execute each of the scripts (0 through 7) which will undertake sequential tasks like defining skeletons, to undertaking the PCLM, cleaning outputs for analysis, and data visualisation
 
 
 ### Structure
@@ -48,6 +55,4 @@ This version of the code is pre-publication (v.0.1.0). If you have any suggestio
 ------------
 
 This work is free. You can redistribute it and/or modify it under the terms of the GNU Public license and subject to all prior terms and licenses imposed by the free, public data sources provided by the HMD-STMF, CoverAge-DB, UK-ONS, and US-CDC (i.e. the 'data originators'). The code comes without any warranty, to the extent permitted by applicable law.
-
-### Acknowledgements
 
