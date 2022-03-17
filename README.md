@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/jmaburto/ex_USA_racial-ethnic_differences/blob/master/out/cover.png?raw=true" width="100%"/>
+  <img src="https://github.com/jmaburto/ex_USA_racial-ethnic_differences/blob/main/out/cover.PNG?raw=true" width="100%"/>
 </p>
 
 
