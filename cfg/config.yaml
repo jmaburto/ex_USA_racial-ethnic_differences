@@ -1,0 +1,17 @@
+skeleton:
+  year:
+    min: 2015
+    max: 2020
+  age:
+    min: 0
+    max: 100
+  sex: {Male: 'Male', Female: 'Female'}
+  region_race: [
+    'US'
+]
+regions_for_all_cause_analysis_race: [
+    'US'
+]
+regions_for_cause_analysis_race: [
+    'US'
+]

@@ -1,0 +1,7 @@
+priv
+.RData
+.Rproj.user
+.Rhistory
+*.Rproj
+.~lock*
+out/lt_sims.rds

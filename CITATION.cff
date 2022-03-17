@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Andrea"
+  given-names: "Tilstra"
+  orcid: "https://orcid.org/0000-0003-0615-xxxx"
+- family-names: "Aburto"
+  given-names: "José Manuel"
+  orcid: "https://orcid.org/0000-0002-2926-6879"
+- family-names: "Dowd"
+  given-names: "Jennifer B."
+  orcid: "https://orcid.org/0000-0003-2006-5656"
+- family-names: "Gutin"
+  given-names: "Iliya"
+  orcid: "https://orcid.org/0000-0003-2006-xxxx"
+contact:
+  - affiliation: "Leverhulme Centre for Demographic Science (LCDS Oxford)"
+    email: "andrea.tilstra@sociology.ox.ac.uk"
+    family-names: Andrea
+    given-names: Tilstra
+title: "Code to replicate 'Life expectancy in the USA'"
+commit: 
+version: 
+doi: 
+date-released: 
+license: GPL-2.0
+repository-code: "https://github.com/OxfordDemSci/ex_USA"
+url : "https://covid19.demographicscience.ox.ac.uk/lifeexpectancy_USA"
