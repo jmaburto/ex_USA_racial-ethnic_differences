@@ -195,7 +195,22 @@ Decomp_fun_reth_sd <-
       names(hor_2) <- c('x','cause','contribution')
       hor_2$decomp_group <- 'latino_white'
       
-      hor <- rbind(hor_1, hor_2)
+      
+      # Decomposition hispanic v black
+      hor_3  <- horiuchi(func = sd.cod.fun,pars1 = mx2,pars2 = mx3,N = N,x =x, nx = nx, cond_age)
+      
+      dim(hor_3) <- c(length(x), length(hor_3)/length(x))
+      
+      colnames(hor_3) <- unique(m$cause)
+      
+      rownames(hor_3) <- x
+      
+      hor_3 <- data.table(melt(hor_3))
+      
+      names(hor_3) <- c('x','cause','contribution')
+      hor_3$decomp_group <- 'latino_black'
+      
+      hor <- rbind(hor_1, hor_2, hor_3)
       
       hor
       

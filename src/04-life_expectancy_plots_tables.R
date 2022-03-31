@@ -178,3 +178,15 @@ dat$table_decomp_cause_e0 <- dcast(dat$table_decomp_cause_e0, reth + sex + perio
 write.csv(x = dat$table_decomp_cause_e0, file = glue('{cnst$path_out}/main_tables/Cause_contrib_e0.csv'))
 
 
+### Quantify contributions below and above age 60 of COVID-19 mortality 
+
+dat$covid <- dat$decomp_e0_time[cause %in% 'COVID-19' & period %in% '2019-2020']
+
+dat$covid[ ,new.age := ifelse(x < 61, 1, 2)]
+
+dat$covid <- dat$covid[ , .(contribution = sum(contribution)), by = .(reth,sex,new.age)]
+
+dat$covid[ , proportion := round(contribution/sum(contribution)*100,1), by = .(reth,sex)]
+
+
+

@@ -17,7 +17,7 @@ cnst <- within(cnst, {
   path_tmp = glue('{wd}/tmp')
   labels_sex = c('Female','Male')
   labels_reth =  c('White','Black','Hispanic')
-  labels_reth_dif =  c('Hispanic-White','White-Black')
+  labels_reth_dif =  c('Hispanic-White','White-Black','Hispanic-Black')
   labels_cause = c('CVD','Respiratory', 'Infectious', 'Despair', 'Cancer', 'Accidents', 'COVID-19', 'Rest')
   ordered_cause = c('Cancer', 'CVD', 'Despair', 'Accidents', 'COVID-19', 'Rest', 'Infectious', 'Respiratory')
   causes_to_show = c('Cancer', 'CVD', 'Despair', 'COVID-19', 'Rest')
@@ -52,6 +52,7 @@ dat$decomp_e0_between[, decomp_group:= factor(x = decomp_group,labels = cnst$lab
 dat$decomp_sd_between[, decomp_group:= factor(x = decomp_group,labels = cnst$labels_reth_dif)]
 
 
+
 # Figure of decomposition of life expectancy racial/ethnic groups --------------------
 
 # regroup data as aprropriate
@@ -69,10 +70,10 @@ dat$fig_gaps[, gap_text:= paste0('Gap = ',gap)]
 
 
 #### Figures for females
-fig$fig_decomp_e0_between_females  <- ggplot(dat$fig_decomp_e0_between[sex == cnst$labels_sex[1]]) + 
+fig$fig_decomp_e0_between_females  <- ggplot(dat$fig_decomp_e0_between[sex == cnst$labels_sex[1] & decomp_group %in% cnst$labels_reth_dif[1:2]]) + 
   ggtitle(paste0(cnst$labels_sex[1],'s'))+
   geom_bar(stat = "identity",position = "stack",show.legend = F,aes(x = age_group, y = contribution, fill = cause))+
-  geom_text(data = dat$fig_gaps[sex == cnst$labels_sex[1],], aes(x = 2, y = -.9, label = gap_text),hjust = 0)+
+  geom_text(data = dat$fig_gaps[sex == cnst$labels_sex[1] & decomp_group %in% cnst$labels_reth_dif[1:2]], aes(x = 2, y = -.9, label = gap_text),hjust = 0)+
   facet_grid(year ~ decomp_group )+
   ylim(c(-1,1.6))+
   scale_fill_manual(values = cnst$colors_fig_cod_1)+
@@ -86,10 +87,10 @@ fig$fig_decomp_e0_between_females
 
 
 #### Figures for males
-fig$fig_decomp_e0_between_males  <- ggplot(dat$fig_decomp_e0_between[sex == cnst$labels_sex[2]]) + 
+fig$fig_decomp_e0_between_males  <- ggplot(dat$fig_decomp_e0_between[sex == cnst$labels_sex[2] & decomp_group %in% cnst$labels_reth_dif[1:2]]) + 
   ggtitle(paste0(cnst$labels_sex[2],'s'))+
   geom_bar(stat = "identity",position = "stack",show.legend = T,aes(x = age_group, y = contribution, fill = cause))+
-  geom_text(data = dat$fig_gaps[sex == cnst$labels_sex[2],], aes(x = 2, y = -.9, label = gap_text),hjust = 0)+
+  geom_text(data = dat$fig_gaps[sex == cnst$labels_sex[2] & decomp_group %in% cnst$labels_reth_dif[1:2]], aes(x = 2, y = -.9, label = gap_text),hjust = 0)+
   facet_grid(year ~ decomp_group )+
   ylim(c(-1,1.6))+
   scale_fill_manual('Cause',values = cnst$colors_fig_cod_1)+
@@ -108,6 +109,23 @@ fig$fig3 <- fig$fig_decomp_e0_between_females| fig$fig_decomp_e0_between_males
 fig$fig3
 
 ggsave("{wd}/out/main_figs/fig-3.pdf" %>% glue, fig$fig3, width = 13, height = 7, device = cairo_pdf)
+
+
+## Figuire appendix for Hispanic-Black difference
+
+fig$fig_decomp_e0_between_s4  <- ggplot(dat$fig_decomp_e0_between[decomp_group %in% cnst$labels_reth_dif[3]]) + 
+  geom_bar(stat = "identity",position = "stack",show.legend = T,aes(x = age_group, y = contribution, fill = cause))+
+  facet_grid(year ~ decomp_group + sex)+
+  scale_fill_manual(values = cnst$colors_fig_cod_1)+
+  labs(x = NULL, y = 'Contribution (years)',size=10)+
+  theme(legend.text=element_text(size=10), legend.title = element_text(size=10),
+        legend.position = 'bottom')+
+  geom_hline(yintercept = 0)+
+  coord_flip()
+
+fig$fig_decomp_e0_between_s4
+
+ggsave("{wd}/out/main_figs/fig-s4.pdf" %>% glue, fig$fig_decomp_e0_between_s4, width = 7, height = 7, device = cairo_pdf)
 
 
 
