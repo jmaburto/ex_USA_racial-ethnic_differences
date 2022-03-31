@@ -6,7 +6,7 @@
 ## An integrated approach to quantify the impact of the COVID-19 pandemic on life expectancy, lifespan inequality and life lost by ethnic/racial groups in the USA
 
 
-[![DOI](https://zenodo.org/badge/334238621.svg)](https://zenodo.org/badge/latestdoi/334238621)
+[![DOI](https://zenodo.org/badge/334238621.svg)]()
 [![Generic badge](https://img.shields.io/badge/R-4.0.4-orange.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/License-GNU-<green>.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-red.svg)](https://shields.io/)
